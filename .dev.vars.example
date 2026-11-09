@@ -1,0 +1,14 @@
+# 复制为 .dev.vars 并填入真实值（.dev.vars 仅本地生效，已被 .gitignore 忽略）
+# 一方工具箱后台 -> 系统 -> OAuth 应用 中创建应用后获取
+OAUTH_CLIENT_ID=tc_xxxx
+OAUTH_CLIENT_SECRET=tcs_xxxx
+
+# 会话加密密钥：随便一段足够长的随机字符串（可用 `openssl rand -hex 32` 生成）
+SESSION_SECRET=please-change-me-to-a-long-random-string
+
+# 本地配合 Vite 代理调试时固定回调地址（需先加入 OAuth 应用回调白名单）
+# 用 wrangler (http://localhost:8788) 直接调试时改为 http://localhost:8788/auth/callback
+OAUTH_REDIRECT_URI=http://localhost:5173/auth/callback
+
+# 可选：管理员用户名或用户ID（逗号分隔），可见并管理全部文件
+ADMIN_USERS=

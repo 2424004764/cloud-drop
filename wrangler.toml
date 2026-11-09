@@ -1,0 +1,19 @@
+# Cloud Drop — Cloudflare Pages 配置
+# 使用 wrangler.toml 管理配置后，部署以本文件为准；
+# 机密变量（OAUTH_CLIENT_SECRET / SESSION_SECRET）请用
+#   npx wrangler pages secret put OAUTH_CLIENT_SECRET
+#   npx wrangler pages secret put SESSION_SECRET
+# 或在 Dashboard -> Settings -> Environment variables 中配置。
+
+name = "cloud-drop"
+compatibility_date = "2025-05-05"
+pages_build_output_dir = "dist"
+
+# ⚠️ bucket_name 必须与「一方工具箱后台 OAuth 应用里登记的 R2 桶名」完全一致，
+#    且该桶位于主站的 Cloudflare 账号中（本 Pages 项目需部署在同一账号下才能绑定）。
+[[r2_buckets]]
+binding = "MY_BUCKET"
+bucket_name = "cloud-drop"
+
+[vars]
+OAUTH_CLIENT_ID = "tc_7e2e38a6578aca8a"

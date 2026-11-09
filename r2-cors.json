@@ -1,0 +1,20 @@
+{
+  "rules": [
+    {
+      "allowed": {
+      "origins": [
+        "https://cloud-drop.fologde.com",
+        "https://cloud-drop-d34.pages.dev",
+        "http://localhost:5173",
+        "http://127.0.0.1:5173",
+        "http://localhost:8788",
+        "http://127.0.0.1:8788"
+      ],
+        "methods": ["GET", "PUT", "POST", "DELETE", "HEAD"],
+        "headers": ["*"]
+      },
+      "exposeHeaders": ["ETag", "Content-Length", "Content-Type"],
+      "maxAgeSeconds": 3600
+    }
+  ]
+}
